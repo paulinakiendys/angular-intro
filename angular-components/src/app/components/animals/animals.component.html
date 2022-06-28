@@ -1,0 +1,15 @@
+<h1>Animals</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Type</th>
+    </tr>
+    <ng-container *ngFor="let animal of animals">
+        <tr *ngIf="!animal.isFed">
+            <td>{{animal.name}}</td>
+            <td>{{animal.age}}</td>
+            <td>{{animal.type}}</td>
+        </tr>
+    </ng-container>
+</table>
