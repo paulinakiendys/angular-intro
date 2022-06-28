@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   link: string = "https://via.placeholder.com/100";
+  boxClass: string = "yellow-box";
+  isHidden: boolean = false;
+  toggleColor: boolean = false;
+
+  handleClick() {
+    this.toggleColor = !this.toggleColor;
+  }
 }

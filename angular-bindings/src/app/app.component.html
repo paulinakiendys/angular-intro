@@ -4,3 +4,8 @@
 <img src={{link}}><br>
 <!-- propery binding -->
 <img [src]="link">
+
+<div class="grey-box" [class]="boxClass" [class.hide]="isHidden"></div>
+<div class="box" [style.background-color]="toggleColor ? 'green' : 'red'"></div>
+
+<button (click)=handleClick()>Click me</button>
