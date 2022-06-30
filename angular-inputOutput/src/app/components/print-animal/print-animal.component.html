@@ -1,6 +1,7 @@
 <div class="box">
-    <p>{{animal.name}}</p>
-    <p>{{animal.type}}</p>
-    <p>{{animal.age}}</p>
-    <p>{{animal.isFed}}</p>
+    <p>Name: {{animal.name}}</p>
+    <p>Type: {{animal.type}}</p>
+    <p>Age: {{animal.age}}</p>
+    <p>Hungry: {{animal.isHungry}}</p>
+    <button class="button" (click)="feedAnimal()">Feed</button>
 </div>

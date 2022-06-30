@@ -1,1 +1,2 @@
-<app-print-animal *ngFor="let a of animals" [animal]="a"></app-print-animal>
+<app-print-animal *ngFor="let a of animals" [animal]="a" (feed)="feedAnimal($event)"></app-print-animal>
+<h1>Hungry animals: {{hungryAnimals}} </h1>
