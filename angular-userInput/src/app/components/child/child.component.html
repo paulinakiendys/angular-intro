@@ -1,0 +1,11 @@
+<!-- <input type="text" (keyup)="handleChange($event)"> -->
+
+<!-- Template variables -->
+<!-- <input type="text" #userInput (keyup)="handleChange(userInput.value)"> -->
+
+<!-- <input type="text" #userInput (keyup)="handleChange(userInput.value)"> -->
+
+<!-- <input type="text" #userInput (keyup.enter)="handleChange(userInput.value)"> -->
+
+<input type="text" #userInput (blur)="handleChange(userInput.value)">
+<p>{{ input }}</p>
