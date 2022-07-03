@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-pipes';
+  birthday: Date = new Date(1990, 6, 4);
 }
