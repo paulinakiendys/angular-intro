@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-observables';
+
+  source = of(1, 2, 3);
+
+  observer = {
+    next: (x: number) => {
+      console.log(x);
+    },
+    error: (err: any) => {
+      console.log(err);
+    },
+    complete: () => {
+      console.log('Completed')
+    }
+  }
+
+  ngOnInit(): void {
+    this.source.subscribe(this.observer);
+  }
 }
