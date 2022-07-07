@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { ZooComponent } from './components/zoo/zoo.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ZooComponent
   ],
   imports: [
     BrowserModule
