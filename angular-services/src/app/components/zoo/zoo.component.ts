@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Animal } from 'src/app/models/Animal';
+import { AnimalService } from 'src/app/services/animal.service';
 
 @Component({
   selector: 'app-zoo',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./zoo.component.scss']
 })
 export class ZooComponent implements OnInit {
+  animals: Animal[] = [];
 
-  constructor() { }
+  constructor(private service: AnimalService) { }
 
   ngOnInit(): void {
+    this.animals = this.service.getAnimals();
   }
 
 }
