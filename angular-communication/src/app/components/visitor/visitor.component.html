@@ -1,1 +1,7 @@
-<p>visitor works!</p>
+<button (click)="publishVisitor()">Get visitor</button>
+
+<h2>Movie info</h2>
+<div *ngIf="data.title">
+    <p>Title: {{data.title}}</p>
+    <p>Length: {{data.length}} min</p>
+</div>

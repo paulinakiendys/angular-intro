@@ -1,1 +1,7 @@
-<p>cinema works!</p>
+<button (click)="publishMovie()">Get movie</button>
+
+<h2>Visitor info</h2>
+<div *ngIf="data.name">
+    <p>Name: {{data.name}}</p>
+    <p>Age: {{data.age}}</p>
+</div>
