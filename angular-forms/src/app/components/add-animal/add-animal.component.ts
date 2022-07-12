@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-animal',
@@ -11,13 +11,19 @@ export class AddAnimalComponent implements OnInit {
   // type = new FormControl('');
   // description = new FormControl('');
 
-  animalForm = new FormGroup({
-    name: new FormControl(''),
-    type: new FormControl(''),
-    description: new FormControl('')
+  // animalForm = new FormGroup({
+  //   name: new FormControl(''),
+  //   type: new FormControl(''),
+  //   description: new FormControl('')
+  // })
+
+  animalForm = this.fb.group({
+    name: ['', Validators.required],
+    type: [''],
+    description: ['']
   })
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
   }
