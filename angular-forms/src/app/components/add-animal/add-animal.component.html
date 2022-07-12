@@ -21,6 +21,16 @@
     <label for="description">Description: </label>
     <input id="description" type="text" formControlName="description"><br>
     <button type="submit">Submit</button>
+
+    <div formArrayName="nicknames">
+        <h2>Nicknames</h2>
+        <button type="button" (click)="addNickname()">Add another nickname</button>
+
+        <div *ngFor="let nickname of nicknames.controls; let i=index">
+            <label for="nickname-{{ i }}">Nickname:</label>
+            <input id="nickname-{{ i }}" type="text" [formControlName]="i">
+        </div>
+    </div>
 </form>
 
 

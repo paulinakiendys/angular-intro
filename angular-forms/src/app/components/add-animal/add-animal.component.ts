@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Form, FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-animal',
@@ -20,7 +20,10 @@ export class AddAnimalComponent implements OnInit {
   animalForm = this.fb.group({
     name: ['', Validators.required],
     type: [''],
-    description: ['']
+    description: [''],
+    nicknames: this.fb.array([
+      this.fb.control('')
+    ])
   })
 
   constructor(private fb: FormBuilder) {}
@@ -34,5 +37,13 @@ export class AddAnimalComponent implements OnInit {
 
   onSubmit() {
     this.animalForm.value.name = 'Paulina'
+  }
+
+  get nicknames(): FormArray {
+    return this.animalForm.get('nicknames') as FormArray;
+  }
+
+  addNickname() {
+    this.nicknames.push(this.fb.control(''));
   }
 }
