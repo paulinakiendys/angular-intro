@@ -1,11 +1,29 @@
 <h1>Add animal</h1>
-<label for="name">Name: </label>
-<input id="name" type="text" [formControl]="name"><br>
+<!-- <label for="name">Name: </label>
+<input id="name" type="text" [formControl]="name">
 <label for="type">Type: </label>
-<input id="type" type="text" [formControl]="type"><br>
+<input id="type" type="text" [formControl]="type">
 <label for="description">Description: </label>
-<input id="description" type="text" [formControl]="description"><br>
+<input id="description" type="text" [formControl]="description">
+<button (click)="changeName()">Submit</button> -->
+
+<!-- <p>
+    {{name.value}}
+</p> -->
+
+<form [formGroup]="animalForm" (ngSubmit)="onSubmit()">
+    <label for="name">Name: </label>
+    <input id="name" type="text" formControlName="name"><br>
+
+    <label for="type">Type: </label>
+    <input id="type" type="text" formControlName="type"><br>
+
+    <label for="description">Description: </label>
+    <input id="description" type="text" formControlName="description"><br>
+    <button type="submit">Submit</button>
+</form>
+
 
 <p>
-    {{name.value}}
+    {{animalForm.value | json}}
 </p>
