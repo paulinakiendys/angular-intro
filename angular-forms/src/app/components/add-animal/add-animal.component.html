@@ -1,1 +1,11 @@
-<p>add-animal works!</p>
+<h1>Add animal</h1>
+<label for="name">Name: </label>
+<input id="name" type="text" [formControl]="name"><br>
+<label for="type">Type: </label>
+<input id="type" type="text" [formControl]="type"><br>
+<label for="description">Description: </label>
+<input id="description" type="text" [formControl]="description"><br>
+
+<p>
+    {{name.value}}
+</p>
