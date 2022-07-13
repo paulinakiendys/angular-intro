@@ -1,1 +1,4 @@
-<p>product works!</p>
+<h3>Our products</h3>
+<ul>
+    <li *ngFor="let item of items"><a [routerLink]="['/product', item.id]">{{ item.title }}</a></li>
+</ul>
