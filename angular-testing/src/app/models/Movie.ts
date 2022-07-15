@@ -1,6 +1,8 @@
-export interface Movie {
-    Title: string;
-    Year: string;
-    imdbID: string;
-    Poster: string;
-  }
+export class Movie {
+  constructor(
+    public Title: string,
+    public Year: string,
+    public imdbID: string,
+    public Poster: string,
+  ) { }
+}

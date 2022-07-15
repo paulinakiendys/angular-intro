@@ -1,16 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { IDataService } from './IDataService';
 import { IOmdbResponse } from '../models/IOmdbResponse';
 import { Movie } from '../models/Movie';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class DataService implements IDataService {
   private theData = new Subject<Movie[]>();
-  theData$ = this.theData.asObservable();
+  public theData$: Observable<Movie[]> = this.theData.asObservable();
 
   constructor(private httpClient: HttpClient) { }
 
